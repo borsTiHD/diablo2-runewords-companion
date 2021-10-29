@@ -1,26 +1,25 @@
 <template>
-    <v-row justify="center" align="center">
-        <v-col cols="12" sm="8" md="6">
-            <v-card :elevation="getElevation" :outlined="getOutlined">
-                <v-card-text>
-                    <v-skeleton-loader
-                        type="table-heading, paragraph, table-row-divider, sentences, button, table-tfoot"
-                    />
-                </v-card-text>
-            </v-card>
-        </v-col>
+    <v-row justify="center">
+        <template v-for="(rune, index) in getRuneList">
+            <v-col :key="index" cols="12" sm="8" md="6" lg="4" xl="3" class="d-flex flex-column">
+                <rune :rune="rune" />
+            </v-col>
+        </template>
     </v-row>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import Rune from '~/components/display/Rune.vue'
 
 export default {
-    name: 'Index',
+    name: 'Runes',
+    components: {
+        Rune
+    },
     computed: {
         ...mapGetters({
-            getElevation: 'settings/getElevation',
-            getOutlined: 'settings/getOutlined'
+            getRuneList: 'runes/getRuneList'
         })
     }
 }

@@ -16,7 +16,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    name: 'Index',
+    name: 'Runewords',
     computed: {
         ...mapGetters({
             getElevation: 'settings/getElevation',
