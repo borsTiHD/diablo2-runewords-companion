@@ -1,14 +1,40 @@
 <template>
     <v-card :elevation="getElevation" :outlined="getOutlined" class="flex d-flex flex-column">
         <v-card-title>
-            {{ rune.name }}
+            <v-tooltip bottom>
+                <template #activator="{ on }">
+                    <v-chip
+                        color="secondary"
+                        label
+                        v-on="on"
+                        @click="openRune(rune.name)"
+                    >
+                        {{ rune.name }}
+                    </v-chip>
+                </template>
+                <span>Open rune</span>
+            </v-tooltip>
 
-            <v-avatar class="ml-2" rounded>
+            <v-avatar v-if="runeIcon" class="mx-4" rounded>
                 <img
                     :src="runeIcon"
                     :alt="rune.name"
                 >
             </v-avatar>
+
+            <v-tooltip v-if="!detailsLink" bottom>
+                <template #activator="{ on }">
+                    <v-btn
+                        color="secondary"
+                        small
+                        v-on="on"
+                        @click="showAll"
+                    >
+                        Show All
+                    </v-btn>
+                </template>
+                <span>Show all runes</span>
+            </v-tooltip>
 
             <v-spacer />
 
@@ -48,9 +74,17 @@
                     <v-list-item-subtitle class="text-right">
                         <v-chip-group column>
                             <template v-for="(item, key, index) in rune.upgradeRecipe">
-                                <v-chip :key="index">
-                                    {{ item }}
-                                </v-chip>
+                                <v-tooltip :key="index" bottom>
+                                    <template #activator="{ on }">
+                                        <v-chip
+                                            v-on="on"
+                                            @click="openRune(item)"
+                                        >
+                                            {{ item }}
+                                        </v-chip>
+                                    </template>
+                                    <span>Open rune</span>
+                                </v-tooltip>
                             </template>
                         </v-chip-group>
                     </v-list-item-subtitle>
@@ -72,7 +106,7 @@ export default {
             required: true,
             default: () => {
                 return {
-                    name: 'default',
+                    name: 'undefined',
                     level: 0,
                     effects: {
                         weapon: [],
@@ -81,6 +115,11 @@ export default {
                     upgradeRecipe: []
                 }
             }
+        },
+        detailsLink: {
+            type: Boolean,
+            required: false,
+            default: true
         }
     },
     computed: {
@@ -91,7 +130,9 @@ export default {
         runeIcon() {
             // Returning rune image URL from battle.net
             let runeName = this.rune.name
-            if (runeName === 'Jah') {
+            if (runeName === 'undefined') {
+                return false
+            } else if (runeName === 'Jah') {
                 runeName = 'Jo'
             } else if (runeName === 'Shael') {
                 runeName = 'Shae'
@@ -102,6 +143,12 @@ export default {
     methods: {
         capitalize(s) {
             return (s && s[0].toUpperCase() + s.slice(1)) || ''
+        },
+        openRune(name) {
+            this.$router.push(`/rune/${name}`)
+        },
+        showAll() {
+            this.$router.push('/runes')
         }
     }
 }

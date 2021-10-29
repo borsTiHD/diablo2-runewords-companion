@@ -7,7 +7,8 @@ import {
     mdiCreditCardOutline,
     mdiEmoticonDevilOutline,
     mdiAbugidaThai,
-    mdiClipboardListOutline
+    mdiClipboardListOutline,
+    mdiMagnify
 } from '@mdi/js'
 
 const MY_ICONS = {
@@ -19,7 +20,8 @@ const MY_ICONS = {
     mdiCreditCardOutline,
     mdiEmoticonDevilOutline,
     mdiAbugidaThai,
-    mdiClipboardListOutline
+    mdiClipboardListOutline,
+    mdiMagnify
 }
 
 export default ({ app }, inject) => {
