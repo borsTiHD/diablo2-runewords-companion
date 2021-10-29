@@ -1,7 +1,13 @@
 {
   "name": "diablo2-runewords-companion",
-  "version": "1.0.0",
-  "private": true,
+  "productName": "Diablo 2 Runewords Companion 😈",
+  "version": "0.0.1",
+  "description": "This is a small companion App for Diablo 2 Resurrection.",
+  "author": "borsTiHD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/borsTiHD/diablo2-runewords-companion"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -20,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@mdi/js": "^6.4.95",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.12.1",
@@ -30,6 +37,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "jest": "^27.0.5",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "vue-toastification": "^1.7.14"
   }
 }
