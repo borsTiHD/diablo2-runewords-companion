@@ -17,6 +17,11 @@ import { mapGetters } from 'vuex'
 
 export default {
     name: 'Runewords',
+    head() {
+        return {
+            title: `${this.$options.name} | ${this.headTitle()}`
+        }
+    },
     computed: {
         ...mapGetters({
             getElevation: 'settings/getElevation',

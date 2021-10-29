@@ -17,6 +17,11 @@ export default {
     components: {
         Rune
     },
+    head() {
+        return {
+            title: `${this.$options.name} | ${this.headTitle()}`
+        }
+    },
     computed: {
         ...mapGetters({
             getRuneList: 'runes/getRuneList'
