@@ -5,6 +5,7 @@
                 <template #activator="{ on }">
                     <v-chip
                         color="secondary"
+                        text-color="orange lighten-1"
                         label
                         v-on="on"
                         @click="openRune(rune.name)"
@@ -55,7 +56,7 @@
                         <v-list-item>
                             <v-list-item-title>{{ capitalize(name) }}:</v-list-item-title>
                             <v-list-item-subtitle class="flex d-flex flex-column text-right">
-                                <span v-for="(effect, index) in type" :key="index">
+                                <span v-for="(effect, index) in type" :key="index" class="blue--text">
                                     {{ effect }}
                                 </span>
                             </v-list-item-subtitle>
@@ -71,35 +72,38 @@
             <v-list-item>
                 <v-list-item-content>
                     <v-list-item-title>Upgrade Recipe:</v-list-item-title>
-                    <v-list-item-subtitle class="text-right">
-                        <v-chip-group column>
-                            <template v-for="(item, key, index) in rune.upgradeRecipe.runes">
-                                <v-tooltip :key="index" bottom>
-                                    <template #activator="{ on }">
-                                        <v-chip
-                                            v-on="on"
-                                            @click="openRune(item)"
-                                        >
-                                            {{ item }}
-                                        </v-chip>
-                                    </template>
-                                    <span>Open rune</span>
-                                </v-tooltip>
-                            </template>
-                            <template v-for="(item, key, index) in rune.upgradeRecipe.gems">
-                                <v-tooltip :key="index" bottom>
-                                    <template #activator="{ on }">
-                                        <v-chip
-                                            v-on="on"
-                                            @click="openGem(item)"
-                                        >
-                                            {{ item }}
-                                        </v-chip>
-                                    </template>
-                                    <span>Open gem</span>
-                                </v-tooltip>
-                            </template>
-                        </v-chip-group>
+                    <v-list-item-subtitle>
+                        <template v-for="(item, key, index) in rune.upgradeRecipe.runes">
+                            <v-tooltip :key="index" bottom>
+                                <template #activator="{ on }">
+                                    <v-chip
+                                        class="mr-1"
+                                        text-color="orange lighten-1"
+                                        dark
+                                        v-on="on"
+                                        @click="openRune(item)"
+                                    >
+                                        {{ item }}
+                                    </v-chip>
+                                </template>
+                                <span>Open rune</span>
+                            </v-tooltip>
+                        </template>
+                        <template v-for="(item, key, index) in rune.upgradeRecipe.gems">
+                            <v-tooltip :key="index" bottom>
+                                <template #activator="{ on }">
+                                    <v-chip
+                                        class="mr-1"
+                                        dark
+                                        v-on="on"
+                                        @click="openGem(item)"
+                                    >
+                                        {{ item }}
+                                    </v-chip>
+                                </template>
+                                <span>Open gem</span>
+                            </v-tooltip>
+                        </template>
                     </v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
