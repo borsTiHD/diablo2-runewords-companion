@@ -1,5 +1,6 @@
 // Root Store
 export const state = () => ({
+    // Credits: List parsed from https://www.windowscentral.com/diablo-2-resurrected-runes-runewords
     runeList: [
         {
             name: 'El',
