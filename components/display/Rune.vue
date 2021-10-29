@@ -73,7 +73,7 @@
                     <v-list-item-title>Upgrade Recipe:</v-list-item-title>
                     <v-list-item-subtitle class="text-right">
                         <v-chip-group column>
-                            <template v-for="(item, key, index) in rune.upgradeRecipe">
+                            <template v-for="(item, key, index) in rune.upgradeRecipe.runes">
                                 <v-tooltip :key="index" bottom>
                                     <template #activator="{ on }">
                                         <v-chip
@@ -84,6 +84,19 @@
                                         </v-chip>
                                     </template>
                                     <span>Open rune</span>
+                                </v-tooltip>
+                            </template>
+                            <template v-for="(item, key, index) in rune.upgradeRecipe.gems">
+                                <v-tooltip :key="index" bottom>
+                                    <template #activator="{ on }">
+                                        <v-chip
+                                            v-on="on"
+                                            @click="openGem(item)"
+                                        >
+                                            {{ item }}
+                                        </v-chip>
+                                    </template>
+                                    <span>Open gem</span>
                                 </v-tooltip>
                             </template>
                         </v-chip-group>
@@ -146,6 +159,9 @@ export default {
         },
         openRune(name) {
             this.$router.push(`/rune/${name}`)
+        },
+        openGem(name) {
+            this.$router.push(`/gem/${name}`)
         },
         showAll() {
             this.$router.push('/runes')
