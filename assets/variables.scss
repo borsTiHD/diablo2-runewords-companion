@@ -2,3 +2,24 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+@font-face {
+    font-family: 'Exocet Light';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~assets/exocet/EXL.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Exocet Heavy';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('~assets/exocet/EXH.ttf') format('truetype');
+}
+
+$body-font-family: 'Exocet Light'; // Roboto
+$heading-font-family: 'Exocet Heavy';
+
+@import '~vuetify/src/styles/styles.sass';
