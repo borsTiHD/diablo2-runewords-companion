@@ -1,6 +1,30 @@
-import colors from 'vuetify/es5/util/colors'
+import path from 'path'
+import fs from 'fs-extra'
+
+// Development
+const isDev = process.env.NODE_ENV !== 'production'
+
+// Path CONST
+const PROJECT_ROOT = process.cwd()
+const PKG_FILE = path.join(PROJECT_ROOT, 'package.json')
+
+// Package.json
+const pkg = JSON.parse(fs.readFileSync(PKG_FILE)) // import pkg from '../../package.json'
+
+// Webpage title, also used in global "titleMixin"
+const headTitle = isDev ? `${pkg.productName.replace(' 😈', '')} - DEV` : pkg.productName.replace(' 😈', '')
+
+// Alias
+const alias = {
+    alias: {
+        projRoot: PROJECT_ROOT
+    }
+}
 
 export default {
+    // Adding path alias
+    ...alias,
+
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
     ssr: false,
 
@@ -9,13 +33,12 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        titleTemplate: '%s - diablo2-runewords-companion',
-        title: 'diablo2-runewords-companion',
+        titleTemplate: '%s',
+        title: headTitle,
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
-            { name: 'format-detection', content: 'telephone=no' }
+            { hid: 'description', name: 'description', content: '' }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -28,6 +51,10 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
+        { mode: 'client', src: '@/plugins/vuetify-icons.js' },
+        { mode: 'client', src: '@/plugins/change-theme.js' },
+        { mode: 'client', src: '@/plugins/pwa.client.js' },
+        { mode: 'client', src: '@/plugins/pwa-update.client.js' }
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -62,19 +89,17 @@ export default {
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
         customVariables: ['~/assets/variables.scss'],
+        treeShake: true,
+        defaultAssets: false,
+        icons: {
+            iconfont: 'mdiSvg'
+        },
         theme: {
-            dark: true,
             themes: {
-                dark: {
-                    primary: colors.blue.darken2,
-                    accent: colors.grey.darken3,
-                    secondary: colors.amber.darken3,
-                    info: colors.teal.lighten1,
-                    warning: colors.amber.base,
-                    error: colors.deepOrange.accent4,
-                    success: colors.green.accent3
-                }
-            }
+                light: {},
+                dark: {}
+            },
+            options: { customProperties: true }
         }
     },
 

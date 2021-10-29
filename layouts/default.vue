@@ -1,117 +1,149 @@
 <template>
-    <v-app dark>
-        <v-navigation-drawer
-            v-model="drawer"
-            :mini-variant="miniVariant"
-            :clipped="clipped"
-            fixed
-            app
-        >
-            <v-list>
-                <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                    :to="item.to"
-                    router
-                    exact
-                >
-                    <v-list-item-action>
-                        <v-icon>{{ item.icon }}</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title v-text="item.title" />
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>
-        <v-app-bar
-            :clipped-left="clipped"
-            fixed
-            app
-        >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-            <v-btn
-                icon
-                @click.stop="miniVariant = !miniVariant"
-            >
-                <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-            </v-btn>
-            <v-btn
-                icon
-                @click.stop="clipped = !clipped"
-            >
-                <v-icon>mdi-application</v-icon>
-            </v-btn>
-            <v-btn
-                icon
-                @click.stop="fixed = !fixed"
-            >
-                <v-icon>mdi-minus</v-icon>
-            </v-btn>
-            <v-toolbar-title v-text="title" />
-            <v-spacer />
-            <v-btn
-                icon
-                @click.stop="rightDrawer = !rightDrawer"
-            >
-                <v-icon>mdi-menu</v-icon>
-            </v-btn>
-        </v-app-bar>
+    <v-app
+        v-resize="onResize"
+        :style="{ background: $vuetify.theme.themes[theme].background }"
+    >
+        <app-header />
+        <app-sidebar />
+
         <v-main>
-            <v-container>
-                <Nuxt />
+            <v-container id="container" fluid :style="`height: ${containerHeight}px;`">
+                <nuxt keep-alive />
             </v-container>
         </v-main>
-        <v-navigation-drawer
-            v-model="rightDrawer"
-            :right="right"
-            temporary
-            fixed
-        >
-            <v-list>
-                <v-list-item @click.native="right = !right">
-                    <v-list-item-action>
-                        <v-icon light>
-                            mdi-repeat
-                        </v-icon>
-                    </v-list-item-action>
-                    <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>
-        <v-footer
-            :absolute="!fixed"
-            app
-        >
-            <span>&copy; {{ new Date().getFullYear() }}</span>
-        </v-footer>
+
+        <app-footer id="footer" />
     </v-app>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+import AppHeader from '~/components/layout/Header.vue'
+import AppSidebar from '~/components/layout/Sidebar.vue'
+import AppFooter from '~/components/layout/Footer.vue'
+
 export default {
+    components: {
+        AppHeader,
+        AppSidebar,
+        AppFooter
+    },
     data() {
         return {
-            clipped: false,
-            drawer: false,
-            fixed: false,
-            items: [
-                {
-                    icon: 'mdi-apps',
-                    title: 'Welcome',
-                    to: '/'
-                },
-                {
-                    icon: 'mdi-chart-bubble',
-                    title: 'Inspire',
-                    to: '/inspire'
-                }
-            ],
-            miniVariant: false,
-            right: true,
-            rightDrawer: false,
-            title: 'Vuetify.js'
+            containerHeight: 0
+        }
+    },
+    computed: {
+        ...mapGetters({
+            getActiveSkin: 'settings/getActiveSkin',
+            getDarkMode: 'settings/getDarkMode'
+        }),
+        theme() {
+            return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+        }
+    },
+    async created() {
+        // Clientside Init
+        if (process.client) {
+            // Getting 'darkmode' setting from persisted vuex-store
+            this.$vuetify.theme.dark = this.getDarkMode // Set vuetify mode
+
+            // Setting container height
+            setImmediate(() => {
+                this.$design.changeTheme(this.getActiveSkin) // Changing theme with plugin
+                this.onResize()
+            })
+        }
+    },
+    methods: {
+        onResize() {
+            // Setting container height for footer
+            const container = document.getElementById('container')
+            const footer = document.getElementById('footer')
+            this.containerHeight = window.innerHeight - this.getOffset(container).top - this.getOffset(footer).height
+        },
+        getOffset(el) {
+            /**
+             * getOffset() - Ermittelt die X/Y Position eines HTML Elements
+             *             -> // https://stackoverflow.com/a/28222246
+             * @param   {string}    el  -> HTML Element
+             * @returns {object}        -> Returns X/Y Koordinaten in 'px'
+             */
+            const rect = el.getBoundingClientRect()
+            return {
+                left: rect.left + window.scrollX,
+                top: rect.top + window.scrollY,
+                height: rect.height,
+                width: rect.width
+            }
         }
     }
 }
 </script>
+
+<style>
+/*****************************************************\
+No Scollbar on Page
+\*****************************************************/
+html {
+    overflow-y: hidden !important;
+}
+#container {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/*****************************************************\
+Scrollbar
+\*****************************************************/
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*****************************************************\
+Unselectable Elements
+\*****************************************************/
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.selectable {
+    -webkit-touch-callout: text !important;
+    -webkit-user-select: text !important;
+    -khtml-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+/*****************************************************\
+Backgrounds: Settings Colors from theme
+\*****************************************************/
+.v-app-bar {
+    background-color: var(--v-systemBarBackground-base) !important;
+}
+.v-footer {
+    background-color: var(--v-footerBackground-base) !important;
+}
+.v-navigation-drawer__content, .v-navigation-drawer__content .v-list {
+    background-color: var(--v-sidebarBackground-base) !important;
+}
+.v-card, .v-list, .v-tabs-bar {
+    background-color: var(--v-cardBackground-base) !important;
+}
+.v-data-table, .v-data-table .v-row-group__header {
+    background-color: var(--v-cardBackground-base) !important;
+}
+</style>

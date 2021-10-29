@@ -22,20 +22,6 @@ export default {
             getElevation: 'settings/getElevation',
             getOutlined: 'settings/getOutlined'
         })
-    },
-    created() {
-        this.changeRoute()
-    },
-    activated() {
-        this.changeRoute()
-    },
-    methods: {
-        async changeRoute() {
-            // Clientside Init
-            if (process.client) {
-                this.$router.push('/home')
-            }
-        }
     }
 }
 </script>
