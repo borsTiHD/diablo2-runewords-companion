@@ -15,7 +15,10 @@ export const state = () => ({
                     '+1 light radius'
                 ]
             },
-            upgradeRecipe: null
+            upgradeRecipe: {
+                runes: null,
+                gems: null
+            }
         },
         {
             name: 'Eld',
@@ -30,7 +33,10 @@ export const state = () => ({
                     '+7% chance to block (shield)'
                 ]
             },
-            upgradeRecipe: ['El', 'El', 'El']
+            upgradeRecipe: {
+                runes: ['El', 'El', 'El'],
+                gems: null
+            }
         },
         {
             name: 'Tir',
@@ -43,7 +49,10 @@ export const state = () => ({
                     '+2 mana after each kill'
                 ]
             },
-            upgradeRecipe: ['Eld', 'Eld', 'Eld']
+            upgradeRecipe: {
+                runes: ['Eld', 'Eld', 'Eld'],
+                gems: null
+            }
         },
         {
             name: 'Nef',
@@ -56,7 +65,10 @@ export const state = () => ({
                     '+30 missile defense'
                 ]
             },
-            upgradeRecipe: ['Tir', 'Tir', 'Tir']
+            upgradeRecipe: {
+                runes: ['Tir', 'Tir', 'Tir'],
+                gems: null
+            }
         },
         {
             name: 'Eth',
@@ -69,7 +81,10 @@ export const state = () => ({
                     '+15% mana regeneration'
                 ]
             },
-            upgradeRecipe: ['Nef', 'Nef', 'Nef']
+            upgradeRecipe: {
+                runes: ['Nef', 'Nef', 'Nef'],
+                gems: null
+            }
         },
         {
             name: 'Ith',
@@ -82,7 +97,10 @@ export const state = () => ({
                     '15% damage taken goes to mana'
                 ]
             },
-            upgradeRecipe: ['Eth', 'Eth', 'Eth']
+            upgradeRecipe: {
+                runes: ['Eth', 'Eth', 'Eth'],
+                gems: null
+            }
         },
         {
             name: 'Tal',
@@ -96,7 +114,10 @@ export const state = () => ({
                     '+35% poison resist (shield)'
                 ]
             },
-            upgradeRecipe: ['Ith', 'Ith', 'Ith']
+            upgradeRecipe: {
+                runes: ['Ith', 'Ith', 'Ith'],
+                gems: null
+            }
         },
         {
             name: 'Ral',
@@ -110,7 +131,10 @@ export const state = () => ({
                     '+35% fire resist (shield)'
                 ]
             },
-            upgradeRecipe: ['Tal', 'Tal', 'Tal']
+            upgradeRecipe: {
+                runes: ['Tal', 'Tal', 'Tal'],
+                gems: null
+            }
         },
         {
             name: 'Ort',
@@ -124,7 +148,10 @@ export const state = () => ({
                     '+35% lightning resist (shield)'
                 ]
             },
-            upgradeRecipe: ['Ral', 'Ral', 'Ral']
+            upgradeRecipe: {
+                runes: ['Ral', 'Ral', 'Ral'],
+                gems: null
+            }
         },
         {
             name: 'Thul',
@@ -138,7 +165,10 @@ export const state = () => ({
                     '+35% cold resist (shield)'
                 ]
             },
-            upgradeRecipe: ['Ort', 'Ort', 'Ort']
+            upgradeRecipe: {
+                runes: ['Ort', 'Ort', 'Ort'],
+                gems: null
+            }
         },
         {
             name: 'Amn',
@@ -151,7 +181,10 @@ export const state = () => ({
                     'Attacker takes damage of 14'
                 ]
             },
-            upgradeRecipe: ['Thul', 'Thul', 'Thul', 'Chipped Topaz']
+            upgradeRecipe: {
+                runes: ['Thul', 'Thul', 'Thul'],
+                gems: ['Chipped Topaz']
+            }
         },
         {
             name: 'Sol',
@@ -164,7 +197,10 @@ export const state = () => ({
                     'Damage reduced by 7'
                 ]
             },
-            upgradeRecipe: ['Amn', 'Amn', 'Amn', 'Chipped Amethyst']
+            upgradeRecipe: {
+                runes: ['Amn', 'Amn', 'Amn'],
+                gems: ['Chipped Amethyst']
+            }
         },
         {
             name: 'Shael',
@@ -178,7 +214,10 @@ export const state = () => ({
                     '20% faster block rate (shield)'
                 ]
             },
-            upgradeRecipe: ['Sol', 'Sol', 'Sol', 'Chipped Sapphire']
+            upgradeRecipe: {
+                runes: ['Sol', 'Sol', 'Sol'],
+                gems: ['Chipped Sapphire']
+            }
         },
         {
             name: 'Dol',
@@ -191,7 +230,10 @@ export const state = () => ({
                     '+7 replenish life'
                 ]
             },
-            upgradeRecipe: ['Shael', 'Shael', 'Shael', 'Chipped Ruby']
+            upgradeRecipe: {
+                runes: ['Shael', 'Shael', 'Shael'],
+                gems: ['Chipped Ruby']
+            }
         },
         {
             name: 'Hel',
@@ -204,7 +246,10 @@ export const state = () => ({
                     '-15% requirements'
                 ]
             },
-            upgradeRecipe: ['Dol', 'Dol', 'Dol', 'Chipped Emerald']
+            upgradeRecipe: {
+                runes: ['Dol', 'Dol', 'Dol'],
+                gems: ['Chipped Emerald']
+            }
         },
         {
             name: 'Io',
@@ -217,7 +262,10 @@ export const state = () => ({
                     '+10 vitality'
                 ]
             },
-            upgradeRecipe: ['Hel', 'Hel', 'Hel', 'Chipped Diamond']
+            upgradeRecipe: {
+                runes: ['Hel', 'Hel', 'Hel'],
+                gems: ['Chipped Diamond']
+            }
         },
         {
             name: 'Lum',
@@ -230,7 +278,10 @@ export const state = () => ({
                     '+10 energy'
                 ]
             },
-            upgradeRecipe: ['Io', 'Io', 'Io', 'Flawed Topaz']
+            upgradeRecipe: {
+                runes: ['Io', 'Io', 'Io'],
+                gems: ['Flawed Topaz']
+            }
         },
         {
             name: 'Ko',
@@ -243,7 +294,10 @@ export const state = () => ({
                     '+10 dexterity'
                 ]
             },
-            upgradeRecipe: ['Lum', 'Lum', 'Lum', 'Flawed Amethyst']
+            upgradeRecipe: {
+                runes: ['Lum', 'Lum', 'Lum'],
+                gems: ['Flawed Amethyst']
+            }
         },
         {
             name: 'Fal',
@@ -256,7 +310,10 @@ export const state = () => ({
                     '+10 strength'
                 ]
             },
-            upgradeRecipe: ['Ko', 'Ko', 'Ko', 'Flawed Sapphire']
+            upgradeRecipe: {
+                runes: ['Ko', 'Ko', 'Ko'],
+                gems: ['Flawed Sapphire']
+            }
         },
         {
             name: 'Lem',
@@ -269,7 +326,10 @@ export const state = () => ({
                     '50% extra gold from monsters'
                 ]
             },
-            upgradeRecipe: ['Fal', 'Fal', 'Fal', 'Flawed Ruby']
+            upgradeRecipe: {
+                runes: ['Fal', 'Fal', 'Fal'],
+                gems: ['Flawed Ruby']
+            }
         },
         {
             name: 'Pul',
@@ -283,7 +343,10 @@ export const state = () => ({
                     '+30% enhanced defense'
                 ]
             },
-            upgradeRecipe: ['Lem', 'Lem', 'Lem', 'Flawed Emerald']
+            upgradeRecipe: {
+                runes: ['Lem', 'Lem', 'Lem'],
+                gems: ['Flawed Emerald']
+            }
         },
         {
             name: 'Um',
@@ -297,7 +360,10 @@ export const state = () => ({
                     '+22 all resistances (shield)'
                 ]
             },
-            upgradeRecipe: ['Pul', 'Pul', 'Flawed Diamond']
+            upgradeRecipe: {
+                runes: ['Pul', 'Pul'],
+                gems: ['Flawed Diamond']
+            }
         },
         {
             name: 'Mal',
@@ -310,7 +376,10 @@ export const state = () => ({
                     'Magic damage reduced by 7'
                 ]
             },
-            upgradeRecipe: ['Um', 'Um', 'Topaz']
+            upgradeRecipe: {
+                runes: ['Um', 'Um'],
+                gems: ['Topaz']
+            }
         },
         {
             name: 'Ist',
@@ -323,7 +392,10 @@ export const state = () => ({
                     '+25% better magic find'
                 ]
             },
-            upgradeRecipe: ['Mal', 'Mal', 'Amethyst']
+            upgradeRecipe: {
+                runes: ['Mal', 'Mal'],
+                gems: ['Amethyst']
+            }
         },
         {
             name: 'Gul',
@@ -336,7 +408,10 @@ export const state = () => ({
                     '+5% to maximum poison resist'
                 ]
             },
-            upgradeRecipe: ['Ist', 'Ist', 'Sapphire']
+            upgradeRecipe: {
+                runes: ['Ist', 'Ist'],
+                gems: ['Sapphire']
+            }
         },
         {
             name: 'Vex',
@@ -349,7 +424,10 @@ export const state = () => ({
                     '+5% to maximum fire resist'
                 ]
             },
-            upgradeRecipe: ['Gul', 'Gul', 'Ruby']
+            upgradeRecipe: {
+                runes: ['Gul', 'Gul'],
+                gems: ['Ruby']
+            }
         },
         {
             name: 'Ohm',
@@ -362,7 +440,10 @@ export const state = () => ({
                     '+5% to maximum cold resist'
                 ]
             },
-            upgradeRecipe: ['Vex', 'Vex', 'Emerald']
+            upgradeRecipe: {
+                runes: ['Vex', 'Vex'],
+                gems: ['Emerald']
+            }
         },
         {
             name: 'Lo',
@@ -375,7 +456,10 @@ export const state = () => ({
                     '+5% to maximum lightning resist'
                 ]
             },
-            upgradeRecipe: ['Ohm', 'Ohm', 'Diamond']
+            upgradeRecipe: {
+                runes: ['Ohm', 'Ohm'],
+                gems: ['Diamond']
+            }
         },
         {
             name: 'Sur',
@@ -389,7 +473,10 @@ export const state = () => ({
                     '+50 mana (shields)'
                 ]
             },
-            upgradeRecipe: ['Lo', 'Lo', 'Flawless Topaz']
+            upgradeRecipe: {
+                runes: ['Lo', 'Lo'],
+                gems: ['Flawless Topaz']
+            }
         },
         {
             name: 'Ber',
@@ -402,7 +489,10 @@ export const state = () => ({
                     'Damage reduced by 8%'
                 ]
             },
-            upgradeRecipe: ['Sur', 'Sur', 'Flawless Amethyst']
+            upgradeRecipe: {
+                runes: ['Sur', 'Sur'],
+                gems: ['Flawless Amethyst']
+            }
         },
         {
             name: 'Jah',
@@ -416,7 +506,10 @@ export const state = () => ({
                     '+50 life (shield)'
                 ]
             },
-            upgradeRecipe: ['Ber', 'Ber', 'Flawless Sapphire']
+            upgradeRecipe: {
+                runes: ['Ber', 'Ber'],
+                gems: ['Flawless Sapphire']
+            }
         },
         {
             name: 'Cham',
@@ -429,7 +522,10 @@ export const state = () => ({
                     'Cannot be frozen'
                 ]
             },
-            upgradeRecipe: ['Jah', 'Jah', 'Flawless Ruby']
+            upgradeRecipe: {
+                runes: ['Jah', 'Jah'],
+                gems: ['Flawless Ruby']
+            }
         },
         {
             name: 'Zod',
@@ -442,7 +538,10 @@ export const state = () => ({
                     'Indestructible'
                 ]
             },
-            upgradeRecipe: ['Cham', 'Cham', 'Flawless Emerald']
+            upgradeRecipe: {
+                runes: ['Cham', 'Cham'],
+                gems: ['Flawless Emerald']
+            }
         }
     ]
 })
