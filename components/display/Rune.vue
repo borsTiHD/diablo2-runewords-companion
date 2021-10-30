@@ -1,5 +1,5 @@
 <template>
-    <v-card :elevation="getElevation" :outlined="getOutlined" class="flex d-flex flex-column">
+    <v-card :elevation="getElevation" :outlined="getOutlined" class="ma-4 flex d-flex flex-column">
         <v-card-title>
             <v-tooltip bottom>
                 <template #activator="{ on }">
