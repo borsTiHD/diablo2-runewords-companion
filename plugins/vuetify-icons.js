@@ -7,6 +7,7 @@ import {
     mdiCreditCardOutline,
     mdiEmoticonDevilOutline,
     mdiAbugidaThai,
+    mdiDiamondStone,
     mdiClipboardListOutline,
     mdiMagnify
 } from '@mdi/js'
@@ -20,6 +21,7 @@ const MY_ICONS = {
     mdiCreditCardOutline,
     mdiEmoticonDevilOutline,
     mdiAbugidaThai,
+    mdiDiamondStone,
     mdiClipboardListOutline,
     mdiMagnify
 }

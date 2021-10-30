@@ -86,7 +86,7 @@ export default {
                     to: '/runewords'
                 },
                 {
-                    icon: this.$icons.mdiAbugidaThai,
+                    icon: this.$icons.mdiDiamondStone,
                     title: 'Gems',
                     to: '/gems'
                 }
