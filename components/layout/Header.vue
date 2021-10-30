@@ -81,7 +81,8 @@ export default {
     computed: {
         ...mapGetters({
             getDrawer: 'settings/getDrawer',
-            getRuneList: 'runes/getRuneList'
+            getRuneList: 'runes/getRuneList',
+            getGemList: 'gems/getGemList'
         }),
         drawer: {
             get() {
@@ -100,6 +101,14 @@ export default {
                 return {
                     text: item.name,
                     type: 'rune'
+                }
+            }))
+
+            // Adding gems as { name: 'Topaz', type: 'gem' }
+            list = list.concat(this.getGemList.map((item) => {
+                return {
+                    text: item.name,
+                    type: 'gem'
                 }
             }))
 
