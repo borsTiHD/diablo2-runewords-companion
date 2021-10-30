@@ -84,6 +84,11 @@ export default {
                     icon: this.$icons.mdiClipboardListOutline,
                     title: 'Runewords',
                     to: '/runewords'
+                },
+                {
+                    icon: this.$icons.mdiAbugidaThai,
+                    title: 'Gems',
+                    to: '/gems'
                 }
             ]
         },

@@ -1,38 +1,39 @@
 <template>
-    <div>
-        <v-row justify="center">
-            <v-col cols="12" sm="8" md="6" lg="4" xl="3">
-                <v-alert
-                    text
-                    type="info"
-                >
-                    Gems are <strong>not</strong> implemented right now.
-                </v-alert>
-            </v-col>
-        </v-row>
-        <v-row justify="center">
-            <v-col cols="12" sm="8" md="6" lg="4" xl="3" class="d-flex flex-column">
-                <v-chip
-                    color="secondary"
-                    label
-                >
-                    {{ gemName }}
-                </v-chip>
-            </v-col>
-        </v-row>
-    </div>
+    <v-row justify="center">
+        <v-col cols="12" sm="8" md="6" lg="4" xl="3" class="d-flex flex-column">
+            <gem-display :gem="gemObject" :details-link="false" />
+        </v-col>
+    </v-row>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import GemDisplay from '~/components/display/GemDisplay.vue'
+
 export default {
     name: 'GemId',
+    components: {
+        GemDisplay
+    },
     data() {
         return {
-            gemName: null
+            gemName: null,
+            gemObject: null
         }
+    },
+    head() {
+        return {
+            title: `${this.gemName} | ${this.headTitle()}`
+        }
+    },
+    computed: {
+        ...mapGetters({
+            getGem: 'gems/getGem'
+        })
     },
     created() {
         this.gemName = this.$route.params.gem
+        this.gemObject = this.getGem(this.gemName)
     }
 }
 </script>
