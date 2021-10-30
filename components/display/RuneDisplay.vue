@@ -51,9 +51,9 @@
 
         <v-card-text>
             <v-row>
-                <v-col v-for="(type, name) in rune.effects" :key="name" col="12" sm="12" md="12">
+                <v-col col="12" sm="12" md="12">
                     <v-list class="transparent">
-                        <v-list-item>
+                        <v-list-item v-for="(type, name) in rune.effects" :key="name" >
                             <v-list-item-title>{{ capitalize(name) }}:</v-list-item-title>
                             <v-list-item-subtitle class="flex d-flex flex-column text-right">
                                 <span v-for="(effect, index) in type" :key="index" class="blue--text">
