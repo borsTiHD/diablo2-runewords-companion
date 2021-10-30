@@ -1,5 +1,5 @@
 <template>
-    <v-card :elevation="getElevation" :outlined="getOutlined" class="ma-4 flex d-flex flex-column">
+    <v-card :elevation="getElevation" :outlined="getOutlined" class="flex d-flex flex-column">
         <v-card-title>
             <v-tooltip bottom>
                 <template #activator="{ on }">
@@ -48,26 +48,20 @@
 
         <v-divider class="mx-4" />
 
-        <v-card-text>
-            <v-row>
-                <v-col col="12" sm="12" md="12">
-                    <v-list class="transparent">
-                        <v-list-item v-for="(type, name) in gem.effects" :key="name">
-                            <v-list-item-title>{{ capitalize(name) }}:</v-list-item-title>
-                            <v-list-item-subtitle class="flex d-flex flex-column text-right">
-                                <span v-for="(effect, index) in type" :key="index" class="blue--text">
-                                    {{ effect }}
-                                </span>
-                            </v-list-item-subtitle>
-                        </v-list-item>
-                    </v-list>
-                </v-col>
-            </v-row>
-        </v-card-text>
+        <v-list-item v-for="(type, name) in gem.effects" :key="name" two-line>
+            <v-list-item-content>
+                <v-list-item-title>{{ capitalize(name) }}:</v-list-item-title>
+                <v-list-item-subtitle class="flex d-flex flex-column flex-wrap">
+                    <span v-for="(effect, index) in type" :key="index" class="blue--text">
+                        {{ effect }}
+                    </span>
+                </v-list-item-subtitle>
+            </v-list-item-content>
+        </v-list-item>
 
         <v-divider class="mx-4" />
 
-        <v-list class="transparent">
+        <v-list>
             <v-list-item>
                 <v-list-item-content>
                     <v-list-item-title>Upgrade Recipe:</v-list-item-title>
@@ -92,7 +86,6 @@
                 </v-list-item-content>
             </v-list-item>
         </v-list>
-
     </v-card>
 </template>
 

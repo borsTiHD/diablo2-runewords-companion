@@ -1,7 +1,7 @@
 <template>
     <v-row justify="center">
         <template v-for="(rune, index) in getRuneList">
-            <v-col :key="index" cols="12" sm="8" md="6" lg="4" xl="3" class="d-flex flex-column">
+            <v-col :key="index" cols="12" sm="8" md="6" lg="4" xl="3" class="ma-4 d-flex flex-column">
                 <rune-display :rune="rune" />
             </v-col>
         </template>
