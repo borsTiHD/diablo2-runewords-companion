@@ -3,91 +3,6 @@ export const state = () => ({
     // Credits: List parsed from http://classic.battle.net/diablo2exp/items/gems.shtml
     gemList: [
         {
-            name: 'Chipped Skull',
-            level: 1,
-            effects: {
-                weapon: [
-                    'Steals 2% life, 1% Mana'
-                ],
-                shield: [
-                    'Attacker Takes Damage of 4'
-                ],
-                armor: [
-                    'Replenish Life +2',
-                    'Regenerate Mana 8%'
-                ]
-            },
-            upgradeRecipe: null
-        },
-        {
-            name: 'Flawed Skull',
-            level: 5,
-            effects: {
-                weapon: [
-                    'Steals 2% life, 2% Mana'
-                ],
-                shield: [
-                    'Attacker Takes Damage of 8'
-                ],
-                armor: [
-                    'Replenish Life +3',
-                    'Regenerate Mana 8%'
-                ]
-            },
-            upgradeRecipe: ['Chipped Skull', 'Chipped Skull', 'Chipped Skull']
-        },
-        {
-            name: 'Skull',
-            level: 12,
-            effects: {
-                weapon: [
-                    'Steals 3% life, 2% Mana'
-                ],
-                shield: [
-                    'Attacker Takes Damage of 12'
-                ],
-                armor: [
-                    'Replenish Life +3',
-                    'Regenerate Mana 12%'
-                ]
-            },
-            upgradeRecipe: ['Flawed Skull', 'Flawed Skull', 'Flawed Skull']
-        },
-        {
-            name: 'Flawless Skull',
-            level: 15,
-            effects: {
-                weapon: [
-                    'Steals 3% life, 3% Mana'
-                ],
-                shield: [
-                    'Attacker Takes Damage of 16'
-                ],
-                armor: [
-                    'Replenish Life +4',
-                    'Regenerate Mana 12%'
-                ]
-            },
-            upgradeRecipe: ['Skull', 'Skull', 'Skull']
-        },
-        {
-            name: 'Perfect Skull',
-            level: 18,
-            effects: {
-                weapon: [
-                    'Steals 4% life, 3% Mana'
-                ],
-                shield: [
-                    'Attacker Takes Damage of 20'
-                ],
-                armor: [
-                    'Replenish Life +5',
-                    'Regenerate Mana 19%'
-                ]
-            },
-            upgradeRecipe: ['Flawless Skull', 'Flawless Skull', 'Flawless Skull']
-        },
-        {
             name: 'Chipped Amethyst',
             level: 1,
             effects: {
@@ -566,6 +481,91 @@ export const state = () => ({
                 ]
             },
             upgradeRecipe: ['Flawless Topaz', 'Flawless Topaz', 'Flawless Topaz']
+        },
+        {
+            name: 'Chipped Skull',
+            level: 1,
+            effects: {
+                weapon: [
+                    'Steals 2% life, 1% Mana'
+                ],
+                shield: [
+                    'Attacker Takes Damage of 4'
+                ],
+                armor: [
+                    'Replenish Life +2',
+                    'Regenerate Mana 8%'
+                ]
+            },
+            upgradeRecipe: null
+        },
+        {
+            name: 'Flawed Skull',
+            level: 5,
+            effects: {
+                weapon: [
+                    'Steals 2% life, 2% Mana'
+                ],
+                shield: [
+                    'Attacker Takes Damage of 8'
+                ],
+                armor: [
+                    'Replenish Life +3',
+                    'Regenerate Mana 8%'
+                ]
+            },
+            upgradeRecipe: ['Chipped Skull', 'Chipped Skull', 'Chipped Skull']
+        },
+        {
+            name: 'Skull',
+            level: 12,
+            effects: {
+                weapon: [
+                    'Steals 3% life, 2% Mana'
+                ],
+                shield: [
+                    'Attacker Takes Damage of 12'
+                ],
+                armor: [
+                    'Replenish Life +3',
+                    'Regenerate Mana 12%'
+                ]
+            },
+            upgradeRecipe: ['Flawed Skull', 'Flawed Skull', 'Flawed Skull']
+        },
+        {
+            name: 'Flawless Skull',
+            level: 15,
+            effects: {
+                weapon: [
+                    'Steals 3% life, 3% Mana'
+                ],
+                shield: [
+                    'Attacker Takes Damage of 16'
+                ],
+                armor: [
+                    'Replenish Life +4',
+                    'Regenerate Mana 12%'
+                ]
+            },
+            upgradeRecipe: ['Skull', 'Skull', 'Skull']
+        },
+        {
+            name: 'Perfect Skull',
+            level: 18,
+            effects: {
+                weapon: [
+                    'Steals 4% life, 3% Mana'
+                ],
+                shield: [
+                    'Attacker Takes Damage of 20'
+                ],
+                armor: [
+                    'Replenish Life +5',
+                    'Regenerate Mana 19%'
+                ]
+            },
+            upgradeRecipe: ['Flawless Skull', 'Flawless Skull', 'Flawless Skull']
         }
     ]
 })
