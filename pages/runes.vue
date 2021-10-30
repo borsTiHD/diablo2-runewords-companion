@@ -2,7 +2,7 @@
     <v-row justify="center">
         <template v-for="(rune, index) in getRuneList">
             <v-col :key="index" cols="12" sm="8" md="6" lg="4" xl="3" class="d-flex flex-column">
-                <rune :rune="rune" />
+                <rune-display :rune="rune" />
             </v-col>
         </template>
     </v-row>
@@ -10,12 +10,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Rune from '~/components/display/Rune.vue'
+import RuneDisplay from '~/components/display/RuneDisplay.vue'
 
 export default {
     name: 'Runes',
     components: {
-        Rune
+        RuneDisplay
     },
     head() {
         return {

@@ -1,24 +1,29 @@
 <template>
     <v-row justify="center">
         <v-col cols="12" sm="8" md="6" lg="4" xl="3" class="d-flex flex-column">
-            <rune :rune="runeObject" :details-link="false" />
+            <rune-display :rune="runeObject" :details-link="false" />
         </v-col>
     </v-row>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Rune from '~/components/display/Rune.vue'
+import RuneDisplay from '~/components/display/RuneDisplay.vue'
 
 export default {
     name: 'RuneId',
     components: {
-        Rune
+        RuneDisplay
     },
     data() {
         return {
             runeName: null,
             runeObject: null
+        }
+    },
+    head() {
+        return {
+            title: `${this.runeName} | ${this.headTitle()}`
         }
     },
     computed: {
