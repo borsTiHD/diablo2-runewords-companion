@@ -30,6 +30,7 @@
                     </v-list-item-content>
                 </v-list-item>
             </v-list-item-group>
+            <v-divider class="pa-1 mt-3" />
 
             <!-- Sidebar Quick Settings -->
             <div>
@@ -45,6 +46,22 @@
                         <template #label>
                             <v-icon class="mr-8">{{ $icons.mdiThemeLightDark }}</v-icon>
                             Dark Mode
+                        </template>
+                    </v-switch>
+                </v-list-item>
+
+                <!-- Font Setting -->
+                <v-list-item dense>
+                    <v-switch
+                        class="v-input--reverse"
+                        :value="getDiabloFont"
+                        :input-value="getDiabloFont"
+                        dense
+                        @change="changeFontMode($event !== null, $event)"
+                    >
+                        <template #label>
+                            <v-icon class="mr-8">{{ $icons.mdiFormatFont }}</v-icon>
+                            Diablo Font
                         </template>
                     </v-switch>
                 </v-list-item>
@@ -66,7 +83,8 @@ export default {
     computed: {
         ...mapGetters({
             getOutlined: 'settings/getOutlined',
-            getDrawer: 'settings/getDrawer'
+            getDrawer: 'settings/getDrawer',
+            getDiabloFont: 'settings/getDiabloFont'
         }),
         items() {
             return [
@@ -107,12 +125,17 @@ export default {
     methods: {
         ...mapActions({
             setDrawer: 'settings/setDrawer',
-            setDarkMode: 'settings/setDarkMode'
+            setDarkMode: 'settings/setDarkMode',
+            setDiabloFont: 'settings/setDiabloFont'
         }),
         changeDarkMode() {
             const newMode = !this.darkMode
             this.setDarkMode(newMode)
             this.$vuetify.theme.dark = newMode
+        },
+        changeFontMode() {
+            const newMode = !this.getDiabloFont
+            this.setDiabloFont(newMode)
         }
     }
 }

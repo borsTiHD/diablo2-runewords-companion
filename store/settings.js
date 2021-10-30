@@ -5,7 +5,8 @@ export const state = () => ({
         skin: 'Default',
         darkMode: true,
         elevation: 0,
-        outlined: false
+        outlined: false,
+        diabloFont: true
     }
 })
 
@@ -25,6 +26,9 @@ export const mutations = {
     },
     setActiveSkin(state, payload) {
         state.design.skin = payload
+    },
+    setDiabloFont(state, payload) {
+        state.design.diabloFont = payload
     }
 }
 
@@ -44,6 +48,9 @@ export const actions = {
     },
     setActiveSkin({ commit }, payload) {
         commit('setActiveSkin', payload)
+    },
+    setDiabloFont({ commit }, payload) {
+        commit('setDiabloFont', payload)
     }
 }
 
@@ -63,5 +70,8 @@ export const getters = {
     },
     getActiveSkin(state) {
         return state.design.skin
+    },
+    getDiabloFont(state) {
+        return state.design.diabloFont
     }
 }

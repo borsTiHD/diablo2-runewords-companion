@@ -2,6 +2,7 @@
     <v-app
         v-resize="onResize"
         :style="{ background: $vuetify.theme.themes[theme].background }"
+        :class="font"
     >
         <app-header />
         <app-sidebar />
@@ -42,10 +43,19 @@ export default {
     computed: {
         ...mapGetters({
             getActiveSkin: 'settings/getActiveSkin',
-            getDarkMode: 'settings/getDarkMode'
+            getDarkMode: 'settings/getDarkMode',
+            getDiabloFont: 'settings/getDiabloFont'
         }),
         theme() {
             return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+        },
+        font() {
+            // Setting Font Class depending on the current mode
+            const diabloFontMode = this.getDiabloFont
+            if (diabloFontMode) {
+                return 'app--font--diablo'
+            }
+            return 'app--font--roboto'
         }
     },
     async created() {
@@ -131,6 +141,16 @@ Unselectable Elements
     -moz-user-select: text !important;
     -ms-user-select: text !important;
     user-select: text !important;
+}
+
+/*****************************************************\
+Font Family
+\*****************************************************/
+.app--font--diablo {
+    font-family: "Exocet Light", Helvetica, sans-serif;
+}
+.app--font--roboto {
+    font-family: Roboto, Helvetica, sans-serif;
 }
 
 /*****************************************************\

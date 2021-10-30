@@ -9,7 +9,8 @@ import {
     mdiAbugidaThai,
     mdiDiamondStone,
     mdiClipboardListOutline,
-    mdiMagnify
+    mdiMagnify,
+    mdiFormatFont
 } from '@mdi/js'
 
 const MY_ICONS = {
@@ -23,7 +24,8 @@ const MY_ICONS = {
     mdiAbugidaThai,
     mdiDiamondStone,
     mdiClipboardListOutline,
-    mdiMagnify
+    mdiMagnify,
+    mdiFormatFont
 }
 
 export default ({ app }, inject) => {
