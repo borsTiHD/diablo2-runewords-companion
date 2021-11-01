@@ -81,6 +81,7 @@ export default {
     computed: {
         ...mapGetters({
             getDrawer: 'settings/getDrawer',
+            getRunewordList: 'runewords/getRunewordList',
             getRuneList: 'runes/getRuneList',
             getGemList: 'gems/getGemList'
         }),
@@ -95,6 +96,14 @@ export default {
         itemList() {
             // Making a custom list of items
             let list = []
+
+            // Adding runewords as { name: 'Insight', type: 'runeword' }
+            list = list.concat(this.getRunewordList.map((item) => {
+                return {
+                    text: item.name,
+                    type: 'runeword'
+                }
+            }))
 
             // Adding runes as { name: 'El', type: 'rune' }
             list = list.concat(this.getRuneList.map((item) => {
@@ -126,6 +135,10 @@ export default {
                 switch (item.type) {
                     case 'rune':
                         this.$router.push(`/rune/${item.text}`)
+                        break
+
+                    case 'runeword':
+                        this.$router.push(`/runeword/${item.text}`)
                         break
 
                     case 'gem':

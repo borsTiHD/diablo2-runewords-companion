@@ -1,22 +1,22 @@
 <template>
-    <v-row justify="center" align="center">
-        <v-col cols="12" sm="8" md="6">
-            <v-card :elevation="getElevation" :outlined="getOutlined">
-                <v-card-text>
-                    <v-skeleton-loader
-                        type="table-heading, paragraph, table-row-divider, sentences, button, table-tfoot"
-                    />
-                </v-card-text>
-            </v-card>
-        </v-col>
+    <v-row justify="center">
+        <template v-for="(runeword, index) in getRunewordList">
+            <v-col :key="index" cols="12" sm="8" md="6" lg="4" xl="3" class="ma-4 d-flex flex-column">
+                <runeword-display :runeword="runeword" />
+            </v-col>
+        </template>
     </v-row>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import RunewordDisplay from '~/components/display/RunewordDisplay.vue'
 
 export default {
     name: 'Runewords',
+    components: {
+        RunewordDisplay
+    },
     head() {
         return {
             title: `${this.$options.name} | ${this.headTitle()}`
@@ -24,8 +24,7 @@ export default {
     },
     computed: {
         ...mapGetters({
-            getElevation: 'settings/getElevation',
-            getOutlined: 'settings/getOutlined'
+            getRunewordList: 'runewords/getRunewordList'
         })
     }
 }
