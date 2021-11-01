@@ -1183,223 +1183,432 @@ export const state = () => ({
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Ice',
+            level: 65,
+            recipe: ['Amn', 'Shael', 'Jah', 'Lo'],
             allowedItems: [
-                'xxx'
+                'Missile Weapons'
             ],
             effects: [
-                'xxx'
+                '100% Chance To Cast Level 40 Blizzard When You Level-up',
+                '25% Chance To Cast Level 22 Frost Nova On Striking',
+                'Level 18 Holy Freeze Aura When Equipped',
+                '+20% Increased Attack Speed',
+                '+140-210% Enhanced Damage',
+                'Ignore Target\'s Defense',
+                '+25-30% To Cold Skill Damage',
+                '-20% To Enemy Cold Resistance',
+                '7% Life Stolen Per Hit',
+                '20% Deadly Strike',
+                '3.125-309.375 Extra Gold From Monsters (Based on Character Level)'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Infinity',
+            level: 63,
+            recipe: ['Ber', 'Mal', 'Ber', 'Ist'],
             allowedItems: [
-                'xxx'
+                'Polearms'
             ],
             effects: [
-                'xxx'
+                '50% Chance To Cast Level 20 Chain Lightning When You Kill An Enemy',
+                'Level 12 Conviction Aura When Equipped',
+                '+35% Faster Run Walk',
+                '+255-325% Enhanced Damage',
+                '-(45-55)% To Enemy Lightning Resistance',
+                '40% Chance of Crushing Blow',
+                'Prevent Monster Heal',
+                '0.5-49.5 To Vitality (Based on Character Level)',
+                '30% Better Chance of Getting Magic Items',
+                'Level 21 Cyclone Armor (30 Charges)'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Insight',
+            level: 27,
+            recipe: ['Ral', 'Tir', 'Tal', 'Sol'],
             allowedItems: [
-                'xxx'
+                'Polearms',
+                'Staves'
             ],
             effects: [
-                'xxx'
+                'Level 12-17 Meditation Aura When Equipped',
+                '+35% Faster Cast Rate',
+                '+200-260% Enhanced Damage',
+                '+9 To Minimum Damage',
+                '180-250% Bonus to Attack Rating',
+                'Adds 5-30 Fire Damage',
+                '+75 Poison Damage Over 5 Seconds',
+                '+1-6 To Critical Strike',
+                '+5 To All Attributes',
+                '+2 To Mana After Each Kill',
+                '23% Better Chance of Getting Magic Items'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Last Wish',
+            level: 65,
+            recipe: ['Jah', 'Mal', 'Jah', 'Sur', 'Jah', 'Ber'],
             allowedItems: [
-                'xxx'
+                'Swords',
+                'Hammers',
+                'Axes'
             ],
             effects: [
-                'xxx'
+                '6% Chance To Cast Level 11 Fade When Struck',
+                '10% Chance To Cast Level 18 Life Tap On Striking',
+                '20% Chance To Cast Level 20 Charged Bolt On Attack',
+                'Level 17 Might Aura When Equipped',
+                '+330-375% Enhanced Damage',
+                'Ignore Target\'s Defense',
+                '60-70% Chance of Crushing Blow',
+                'Prevent Monster Heal',
+                'Hit Blinds Target',
+                '+(0.5 per character level) 0.5-49.5% Chance of Getting Magic Items (Based on Character Level)'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Lawbringer',
+            level: 43,
+            recipe: ['Amn', 'Lem', 'Ko'],
             allowedItems: [
-                'xxx'
+                'Swords',
+                'Hammers',
+                'Scepters'
             ],
             effects: [
-                'xxx'
+                '20% Chance To Cast Level 15 Decrepify On Striking',
+                'Level 16-18 Sanctuary Aura When Equipped',
+                '-50% Target Defense',
+                'Adds 150-210 Fire Damage',
+                'Adds 130-180 Cold Damage',
+                '7% Life Stolen Per Hit',
+                'Slain Monsters Rest In Peace',
+                '+200-250 Defense Vs. Missile',
+                '+10 To Dexterity',
+                '75% Extra Gold From Monsters'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Oath',
+            level: 49,
+            recipe: ['Shael', 'Pul', 'Mal', 'Lum'],
             allowedItems: [
-                'xxx'
+                'Swords',
+                'Axes',
+                'Maces'
             ],
             effects: [
-                'xxx'
+                '30% Chance To Cast Level 20 Bone Spirit On Striking',
+                'Indestructible',
+                '+50% Increased Attack Speed',
+                '+210-340% Enhanced Damage',
+                '+75% Damage To Demons',
+                '+100 To Attack Rating Against Demons',
+                'Prevent Monster Heal',
+                '+10 To Energy',
+                '+10-15 Magic Absorb',
+                'Level 16 Heart Of Wolverine (20 Charges)',
+                'Level 17 Iron Golem (14 Charges)'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Obedience',
+            level: 41,
+            recipe: ['Hel', 'Ko', 'Thul', 'Eth', 'Fal'],
             allowedItems: [
-                'xxx'
+                'Polearms'
             ],
             effects: [
-                'xxx'
+                '30% Chance To Cast Level 21 Enchant When You Kill An Enemy',
+                '40% Faster Hit Recovery',
+                '+370% Enhanced Damage',
+                '-25% Target Defense',
+                'Adds 3-14 Cold Damage 3 Second Duration (Normal)',
+                '-25% To Enemy Fire Resistance',
+                '40% Chance of Crushing Blow',
+                '+200-300 Defense',
+                '+10 To Strength',
+                '+10 To Dexterity',
+                'All Resistances +20-30',
+                'Requirements -20%'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Phoenix',
+            level: 65,
+            recipe: ['Vex', 'Vex', 'Lo', 'Jah'],
             allowedItems: [
-                'xxx'
+                'Weapons',
+                'Shields'
+            ],
+            effects: {
+                weapons: [
+                    '100% Chance To Cast level 40 Blaze When You Level-up',
+                    '40% Chance To Cast Level 22 Firestorm On Striking',
+                    'Level 10-15 Redemption Aura When Equipped',
+                    '+350-400% Enhanced Damage',
+                    'Ignores Target\'s Defense',
+                    '14% Mana Stolen Per Hit',
+                    '-28% To Enemy Fire Resistance',
+                    '20% Deadly Strike',
+                    '+350-400 Defense Vs. Missile',
+                    '+15-21 Fire Absorb'
+                ],
+                shields: [
+                    '100% Chance To Cast level 40 Blaze When You Level-up',
+                    '40% Chance To Cast Level 22 Firestorm On Striking',
+                    'Level 10-15 Redemption Aura When Equipped',
+                    '+350-400 Defense Vs. Missile',
+                    '+350-400% Enhanced Damage',
+                    '-28% To Enemy Fire Resistance',
+                    '+50 To Life',
+                    '+5% To Maximum Lightning Resistance',
+                    '+10% To Maximum Fire Resistance',
+                    '+15-21 Fire Absorb'
+                ]
+            }
+        },
+        {
+            name: 'Pride',
+            level: 67,
+            recipe: ['Cham', 'Sur', 'Io', 'Lo'],
+            allowedItems: [
+                'Polearms'
             ],
             effects: [
-                'xxx'
+                '25% Chance To Cast Level 17 Fire Wall When Struck',
+                'Level 16-20 Concentration Aura When Equipped',
+                '260-300% Bonus To Attack Rating',
+                '+1-99% Damage To Demons (Based on Character Level)',
+                'Adds 50-280 Lightning Damage',
+                '20% Deadly Strike',
+                'Hit Blinds Target',
+                'Freezes Target +3',
+                '+10 To Vitality',
+                'Replenish Life +8',
+                '1.875-185.625% Extra Gold From Monsters (Based on Character Level)'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Rift',
+            level: 53,
+            recipe: ['Hel', 'Ko', 'Lem', 'Gul'],
             allowedItems: [
-                'xxx'
+                'Polearms',
+                'Scepters'
             ],
             effects: [
-                'xxx'
+                '20% Chance To Cast Level 16 Tornado On Striking',
+                '16% Chance To Cast Level 21 Frozen Orb On Attack',
+                '20% Bonus To Attack Rating',
+                'Adds 160-250 Magic Damage',
+                'Adds 60-180 Fire Damage',
+                '+5-10 To All Stats',
+                '+10 To Dexterity',
+                '38% Damage Taken Goes To Mana',
+                '75% Extra Gold From Monsters',
+                'Level 15 Iron Maiden (40 Charges)',
+                'Requirements -20%'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Spirit',
+            level: 25,
+            recipe: ['Tal', 'Thul', 'Ort', 'Amn'],
             allowedItems: [
-                'xxx'
+                'Swords',
+                'Shields'
+            ],
+            effects: {
+                weapons: [
+                    '+2 To All Skills',
+                    '+25-35% Faster Cast Rate',
+                    '+55% Faster Hit Recovery',
+                    'Adds 1-50 Lightning Damage',
+                    'Adds 3-14 Cold Damage 3 Second Duration ',
+                    '+75 Poison Damage Over 5 Seconds',
+                    '7% Life Stolen Per Hit',
+                    '+250 Defense Vs. Missile',
+                    '+22 To Vitality',
+                    '+89-112 To Mana',
+                    '+3-8 Magic Absorb'
+                ],
+                shields: [
+                    '+2 To All Skills',
+                    '+25-35% Faster Cast Rate',
+                    '+55% Faster Hit Recovery',
+                    '+250 Defense Vs. Missile',
+                    '+22 To Vitality',
+                    '+89-112 To Mana',
+                    'Cold Resistance +35%',
+                    'Lightning Resistance +35%',
+                    'Poison Resistance +35%',
+                    '+3-8 Magic Absorb',
+                    'Attacker Takes Damage of 14'
+                ]
+            }
+        },
+        {
+            name: 'Voice of Reason',
+            level: 43,
+            recipe: ['Lem', 'Ko', 'El', 'Eld'],
+            allowedItems: [
+                'Swords',
+                'Maces'
             ],
             effects: [
-                'xxx'
+                '15% Chance To Cast Level 13 Frozen Orb On Striking',
+                '18% Chance To Cast Level 20 Ice Blast On Striking',
+                '+50 To Attack Rating',
+                '+220-350% Damage To Demons',
+                '+355-375% Damage To Undead',
+                '+50 To Attack Rating Against Undead',
+                'Adds 100-220 Cold Damage',
+                '-24% To Enemy Cold Resistance',
+                '+10 To Dexterity',
+                'Cannot Be Frozen',
+                '75% Extra Gold From Monsters',
+                '+1 To Light Radius'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Wrath',
+            level: 63,
+            recipe: ['Pul', 'Lum', 'Ber', 'Mal'],
             allowedItems: [
-                'xxx'
+                'Missile Weapons'
             ],
             effects: [
-                'xxx'
+                '30% Chance To Cast Level 1 Decrepify On Striking',
+                '5% Chance To Cast Level 10 Life Tap On Striking',
+                '+375% Damage To Demons',
+                '+100 To Attack Rating Against Demons',
+                '+250-300% Damage To Undead',
+                'Adds 85-120 Magic Damage',
+                'Adds 41-240 Lightning Damage',
+                '20% Chance of Crushing Blow',
+                'Prevent Monster Heal',
+                '+10 To Energy',
+                'Cannot Be Frozen'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Bone',
+            level: 47,
+            recipe: ['Sol', 'Um', 'Um'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
+                '15% Chance To Cast level 10 Bone Armor When Struck',
+                '15% Chance To Cast level 10 Bone Spear On Striking',
+                '+2 To Necromancer Skill Levels',
+                '+100-150 To Mana',
+                'All Resistances +30',
+                'Damage Reduced By 7'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Enlightenment',
+            level: 45,
+            recipe: ['Pul', 'Ral', 'Sol'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
+                '5% Chance To Cast Level 15 Blaze When Struck',
+                '5% Chance To Cast level 15 Fire Ball On Striking',
+                '+2 To Sorceress Skill Levels',
+                '+1 To Warmth',
+                '+30% Enhanced Defense',
+                'Fire Resistance +30%',
+                'Damage Reduced By 7'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Myth',
+            level: 25,
+            recipe: ['Hel', 'Amn', 'Nef'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
+                '3% Chance To Cast Level 1 Howl When Struck',
+                '10% Chance To Cast Level 1 Taunt On Striking',
+                '+2 To Barbarian Skill Levels',
+                '+30 Defense Vs. Missile',
+                'Replenish Life +10',
+                'Attacker Takes Damage of 14',
+                'Requirements -15%'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Peace',
+            level: 29,
+            recipe: ['Shael', 'Thul', 'Amn'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
+                '4% Chance To Cast Level 5 Slow Missiles When Struck',
+                '2% Chance To Cast level 15 Valkyrie On Striking',
+                '+2 To Amazon Skill Levels',
+                '+20% Faster Hit Recovery',
+                '+2 To Critical Strike',
+                'Cold Resistance +30%',
+                'Attacker Takes Damage of 14'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Principle',
+            level: 53,
+            recipe: ['Ral', 'Gul', 'Eld'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
+                '100% Chance To Cast Level 5 Holy Bolt On Striking',
+                '+2 To Paladin Skill Levels',
+                '+50% Damage to Undead',
+                '+100-150 To Life',
+                '15% Slower Stamina Drain',
+                '+5% To Maximum Poison Resistance',
+                'Fire Resistance +30%'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Rain',
+            level: 49,
+            recipe: ['Ort', 'Mal', 'Ith'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
+                '5% Chance To Cast Level 15 Cyclone Armor When Struck',
+                '5% Chance To Cast Level 15 Twister On Striking',
+                '+2 To Druid Skills',
+                '+100-150 To Mana',
+                'Lightning Resistance +30%',
+                'Magic Damage Reduced By 7',
+                '15% Damage Taken Goes to Mana'
             ]
         },
         {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
+            name: 'Treachery',
+            level: 43,
+            recipe: ['Shael', 'Thul', 'Lem'],
             allowedItems: [
-                'xxx'
+                'Chest Armor'
             ],
             effects: [
-                'xxx'
-            ]
-        },
-        {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
-            allowedItems: [
-                'xxx'
-            ],
-            effects: [
-                'xxx'
-            ]
-        },
-        {
-            name: 'xxx',
-            level: 666,
-            recipe: ['xxxxxx'],
-            allowedItems: [
-                'xxx'
-            ],
-            effects: [
-                'xxx'
+                '5% Chance To Cast Level 15 Fade When Struck',
+                '25% Chance To Cast level 15 Venom On Striking',
+                '+2 To Assassin Skills',
+                '+45% Increased Attack Speed',
+                '+20% Faster Hit Recovery',
+                'Cold Resistance +30%',
+                '50% Extra Gold From Monsters'
             ]
         }
     ]
