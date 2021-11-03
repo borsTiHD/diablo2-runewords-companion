@@ -16,7 +16,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    name: 'Index',
+    name: 'IndexPage',
     computed: {
         ...mapGetters({
             getElevation: 'settings/getElevation',

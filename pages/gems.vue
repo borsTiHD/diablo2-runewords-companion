@@ -13,7 +13,7 @@ import { mapGetters } from 'vuex'
 import GemDisplay from '~/components/display/GemDisplay.vue'
 
 export default {
-    name: 'Gems',
+    name: 'GemsPage',
     components: {
         GemDisplay
     },

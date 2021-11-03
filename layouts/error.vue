@@ -14,6 +14,7 @@
 
 <script>
 export default {
+    name: 'Error',
     layout: 'empty',
     props: {
         error: {
@@ -38,6 +39,6 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 20px;
+    font-size: 20px;
 }
 </style>

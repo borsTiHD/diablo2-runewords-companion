@@ -111,7 +111,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    name: 'Rune',
+    name: 'RuneDisplay',
     props: {
         rune: {
             type: Object,

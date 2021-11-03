@@ -13,7 +13,7 @@ import { mapGetters } from 'vuex'
 import RuneDisplay from '~/components/display/RuneDisplay.vue'
 
 export default {
-    name: 'Runes',
+    name: 'RunesPage',
     components: {
         RuneDisplay
     },

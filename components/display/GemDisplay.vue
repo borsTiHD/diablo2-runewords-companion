@@ -93,7 +93,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    name: 'Gem',
+    name: 'GemDisplay',
     props: {
         gem: {
             type: Object,

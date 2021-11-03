@@ -33,16 +33,13 @@ module.exports = {
         curly: ['error', 'multi-line'],
         'import/no-extraneous-dependencies': 'off',
         'require-await': 0,
-
         'global-require': 0,
         'import/no-unresolved': 0,
         'import/newline-after-import': 0,
         'no-underscore-dangle': 0,
-
         'vue/max-attributes-per-line': 'off',
         'vue/singleline-html-element-content-newline': 'off',
         'vue/multiline-html-element-content-newline': 'off',
-
         'vue/html-indent': ['error', 4, {
             attribute: 1,
             baseIndent: 1,
@@ -51,7 +48,16 @@ module.exports = {
             ignores: []
         }
         ],
-
-        'vue/no-v-html': 'off'
+        'vue/no-v-html': 'off',
+        'vue/first-attribute-linebreak': ['error', {
+            singleline: 'ignore',
+            multiline: 'below'
+        }],
+        'vue/no-reserved-props': ['error', {
+            vueVersion: 2
+        }],
+        'vue/multi-word-component-names': ['error', {
+            ignores: ['Default', 'Error', 'Sidebar', 'Header', 'Footer', 'Button']
+        }]
     }
 }

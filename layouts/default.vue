@@ -30,6 +30,7 @@ import titleMixin from '~/mixins/titleMixin.js'
 Vue.mixin(titleMixin)
 
 export default {
+    name: 'Default',
     components: {
         AppHeader,
         AppSidebar,

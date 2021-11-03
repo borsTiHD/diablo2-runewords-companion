@@ -47,7 +47,7 @@ import { mapGetters } from 'vuex'
 import pkg from 'projRoot/package.json'
 
 export default {
-    name: 'Home',
+    name: 'HomePage',
     auth: false,
     data() {
         return {
