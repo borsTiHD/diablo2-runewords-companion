@@ -94,12 +94,14 @@
                 <v-list-item-content>
                     <v-list-item-title>{{ capitalize(name) }}:</v-list-item-title>
                     <v-list-item-content class="blue--text">
-                        <span v-for="(item, i) in effect" :key="i">- {{ item }}</span>
+                        <li v-for="(item, i) in effect" :key="i">{{ item }}</li>
                     </v-list-item-content>
                 </v-list-item-content>
             </template>
             <template v-else>
-                <v-list-item-content class="py-0 blue--text">- {{ effect }}</v-list-item-content>
+                <v-list-item-content class="py-0 my-1 blue--text">
+                    <li>{{ effect }}</li>
+                </v-list-item-content>
             </template>
         </v-list-item>
 

@@ -1,13 +1,12 @@
 <template>
     <v-row>
-        <v-col cols="2" sm="12" md="12" lg="2" class="scrolling-section">
+        <v-col cols="2" sm="12" md="3" lg="2">
             <rune-inventory />
         </v-col>
-        <v-col cols="2" sm="12" md="12" lg="2" />
-        <v-col cols="10" sm="12" md="12" lg="10">
+        <v-col cols="10" sm="12" md="9" lg="10">
             <v-row justify="center">
                 <template v-for="(runeword, index) in getRunewordList">
-                    <v-col :key="index" cols="12" sm="8" md="6" lg="4" xl="3" class="ma-4 d-flex flex-column">
+                    <v-col :key="index" cols="12" sm="8" md="8" lg="4" xl="3" class="mx-2 d-flex flex-column">
                         <runeword-display :runeword="runeword" />
                     </v-col>
                 </template>
@@ -41,9 +40,4 @@ export default {
 </script>
 
 <style scoped>
-.scrolling-section {
-    position: fixed;
-    width: 30%;
-    left: 8px;
-}
 </style>
