@@ -58,7 +58,7 @@ export const mutations = {
 
 // Async functions for setting data and calling mutations
 export const actions = {
-    clearInventory({ commit }, payload) {
+    async clearInventory({ commit }, payload) {
         commit('clearInventory', payload)
     },
     setStock({ commit }, payload) {
