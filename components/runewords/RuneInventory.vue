@@ -11,16 +11,12 @@
                 :rules="[numberValidation]"
             >
                 <template #prepend>
-                    <v-icon
-                        @click="decrementItem(rune)"
-                    >
+                    <v-icon @click="decrementItem(rune)">
                         {{ $icons.mdiMinus }}
                     </v-icon>
                 </template>
                 <template #append-outer>
-                    <v-icon
-                        @click="incrementItem(rune)"
-                    >
+                    <v-icon @click="incrementItem(rune)">
                         {{ $icons.mdiPlus }}
                     </v-icon>
                 </template>

@@ -46,6 +46,7 @@ export default {
             getElevation: 'settings/getElevation',
             getOutlined: 'settings/getOutlined',
             getInventory: 'inventory/getInventory',
+            getItem: 'inventory/getItem',
             getRunewordList: 'runewords/getRunewordList',
             getRuneList: 'runes/getRuneList'
         }),
@@ -58,7 +59,31 @@ export default {
                 // Returning complete list with names, if the user dont have any item in stock
                 return this.getRunewordList.map((runeword) => runeword.name)
             }
-            return ['Insight', 'Holy Thunder']
+
+            // List with possible runewords later on
+            const possibleRunewords = []
+            this.getRunewordList.forEach(({ name, recipe }) => {
+                let valid = true // Validation check
+                const currentStock = JSON.parse(JSON.stringify(this.getInventory)) // Getting clone of current stock from the inventory
+                // Looping through every rune the runeword needs
+                recipe.forEach((rune) => {
+                    // Checking if the needed rune is in our inventory and if the value is greater than 1...
+                    // We will reduce on stock value - important, because some runewords have more than one of the same rune (eg. 'Ko, Ko, Mal' -> 'Sanctuary')
+                    const stockItem = currentStock.find((runeObj) => runeObj.name === rune)
+                    if (stockItem && stockItem.value > 0) {
+                        stockItem.value-- // Reduce stock value by one
+                    } else {
+                        // The needed rune is not in the current stock
+                        // TODO -> Check if the needed rune could be made by an upgrade with other runes (need to check rune recipes)
+                        valid = false // -> validation failed
+                    }
+                })
+
+                // Pushes valid runeword name
+                if (valid) { possibleRunewords.push(name) }
+            })
+
+            return possibleRunewords
         }
     },
     methods: {
@@ -69,8 +94,7 @@ export default {
             this.clearInventory()
         },
         showRuneword(name) {
-            const check = this.calculatedRunewordList.includes(name)
-            return check
+            return this.calculatedRunewordList.includes(name)
         }
     }
 }
