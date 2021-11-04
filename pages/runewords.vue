@@ -64,7 +64,7 @@ export default {
             const possibleRunewords = []
             this.getRunewordList.forEach(({ name, recipe }) => {
                 let valid = true // Validation check
-                const currentStock = JSON.parse(JSON.stringify(this.getInventory)) // Getting clone of current stock from the inventory
+                const currentStock = JSON.parse(JSON.stringify(this.getInventory)) // Getting clone of current stock from the inventory - important so the clone could be manipulated without changing the real inventory
                 // Looping through every rune the runeword needs
                 recipe.forEach((rune) => {
                     // Checking if the needed rune is in our inventory and if the value is greater than 1...
