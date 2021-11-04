@@ -1,7 +1,19 @@
 <template>
     <v-row>
         <v-col cols="2" sm="12" md="3" lg="2">
-            <rune-inventory />
+            <v-card :elevation="getElevation" :outlined="getOutlined">
+                <v-card-actions>
+                    <v-btn
+                        block
+                        @click="clearInventory"
+                    >
+                        Delete All
+                    </v-btn>
+                </v-card-actions>
+                <v-card-text>
+                    <rune-inventory v-for="(rune, index) in getRuneList" :key="index" :rune="rune.name" />
+                </v-card-text>
+            </v-card>
         </v-col>
         <v-col cols="10" sm="12" md="9" lg="10">
             <v-row justify="center">
@@ -16,7 +28,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import RuneInventory from '~/components/runewords/RuneInventory.vue'
 import RunewordDisplay from '~/components/display/RunewordDisplay.vue'
 
@@ -33,7 +45,15 @@ export default {
     },
     computed: {
         ...mapGetters({
-            getRunewordList: 'runewords/getRunewordList'
+            getElevation: 'settings/getElevation',
+            getOutlined: 'settings/getOutlined',
+            getRunewordList: 'runewords/getRunewordList',
+            getRuneList: 'runes/getRuneList'
+        })
+    },
+    methods: {
+        ...mapActions({
+            clearInventory: 'inventory/clearInventory'
         })
     }
 }
