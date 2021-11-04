@@ -94,14 +94,14 @@ export default {
                     to: '/home'
                 },
                 {
-                    icon: this.$icons.mdiAbugidaThai,
-                    title: 'Runes',
-                    to: '/runes'
-                },
-                {
                     icon: this.$icons.mdiClipboardListOutline,
                     title: 'Runewords',
                     to: '/runewords'
+                },
+                {
+                    icon: this.$icons.mdiAbugidaThai,
+                    title: 'Runes',
+                    to: '/runes'
                 },
                 {
                     icon: this.$icons.mdiDiamondStone,

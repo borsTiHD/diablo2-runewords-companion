@@ -52,7 +52,7 @@ export default {
             },
             set(val) {
                 if (/^\d+$/.test(val)) {
-                    // Set new stock value for rune
+                    // Set new stock value for the rune
                     this.setStock({ name: this.rune, value: val })
                 }
             }

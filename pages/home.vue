@@ -51,7 +51,7 @@ export default {
     auth: false,
     data() {
         return {
-            continueRoute: '/runes'
+            continueRoute: '/runewords'
         }
     },
     head() {
