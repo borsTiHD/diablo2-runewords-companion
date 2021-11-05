@@ -17,23 +17,6 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'AppSearch',
-    props: {
-        rune: {
-            type: Object,
-            required: true,
-            default: () => {
-                return {
-                    name: 'undefined',
-                    level: 0,
-                    effects: {
-                        weapon: [],
-                        armor: []
-                    },
-                    upgradeRecipe: []
-                }
-            }
-        }
-    },
     computed: {
         ...mapGetters({
             getSearch: 'appSearch/getSearch',
