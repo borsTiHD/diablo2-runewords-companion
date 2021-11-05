@@ -8,11 +8,12 @@
         <app-sidebar />
 
         <v-main>
-            <v-container id="container" fluid :style="`height: ${containerHeight}px;`">
+            <v-container id="container" fluid :style="`height: ${containerHeight}px;`" @scroll.passive="handleScroll">
                 <nuxt keep-alive />
             </v-container>
         </v-main>
 
+        <app-back-to-top :show="showBackToTop" @click="scrollToTop" />
         <app-footer id="footer" />
     </v-app>
 </template>
@@ -24,6 +25,7 @@ import { mapGetters } from 'vuex'
 import AppHeader from '~/components/layout/Header.vue'
 import AppSidebar from '~/components/layout/Sidebar.vue'
 import AppFooter from '~/components/layout/Footer.vue'
+import AppBackToTop from '@/components/layout/BackToTop.vue'
 
 // Import global mixin's
 import titleMixin from '~/mixins/titleMixin.js'
@@ -34,11 +36,13 @@ export default {
     components: {
         AppHeader,
         AppSidebar,
-        AppFooter
+        AppFooter,
+        AppBackToTop
     },
     data() {
         return {
-            containerHeight: 0
+            containerHeight: 0,
+            showBackToTop: false
         }
     },
     computed: {
@@ -93,6 +97,20 @@ export default {
                 height: rect.height,
                 width: rect.width
             }
+        },
+        handleScroll(event) {
+            // Ermittelt aktuelle Scrollposition des Container Elements...
+            // Zeigt ab einer gewissen Scrollhöhe den BackToTop Button an...
+            const container = document.getElementById('container').scrollTop
+            if (container >= 500) {
+                this.showBackToTop = true
+            } else {
+                this.showBackToTop = false
+            }
+        },
+        scrollToTop() {
+            const container = document.getElementById('container')
+            container.scrollTop = 0
         }
     }
 }

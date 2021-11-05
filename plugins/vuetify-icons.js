@@ -14,7 +14,8 @@ import {
     mdiPlus,
     mdiMinus,
     mdiArrowCollapseUp,
-    mdiArrowExpandDown
+    mdiArrowExpandDown,
+    mdiChevronUp
 } from '@mdi/js'
 
 const MY_ICONS = {
@@ -33,7 +34,8 @@ const MY_ICONS = {
     mdiPlus,
     mdiMinus,
     mdiArrowCollapseUp,
-    mdiArrowExpandDown
+    mdiArrowExpandDown,
+    mdiChevronUp
 }
 
 export default ({ app }, inject) => {
