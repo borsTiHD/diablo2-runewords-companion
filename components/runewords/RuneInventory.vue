@@ -11,14 +11,32 @@
                 :rules="[numberValidation]"
             >
                 <template #prepend>
-                    <v-icon @click="decrementItem(rune)">
-                        {{ $icons.mdiMinus }}
-                    </v-icon>
+                    <v-tooltip bottom>
+                        <template #activator="{ on, attrs }">
+                            <v-icon
+                                v-bind="attrs"
+                                v-on="on"
+                                @click="decrementItem(rune)"
+                            >
+                                {{ $icons.mdiMinus }}
+                            </v-icon>
+                        </template>
+                        <span>Decrement Item</span>
+                    </v-tooltip>
                 </template>
                 <template #append-outer>
-                    <v-icon @click="incrementItem(rune)">
-                        {{ $icons.mdiPlus }}
-                    </v-icon>
+                    <v-tooltip bottom>
+                        <template #activator="{ on, attrs }">
+                            <v-icon
+                                v-bind="attrs"
+                                v-on="on"
+                                @click="incrementItem(rune)"
+                            >
+                                {{ $icons.mdiPlus }}
+                            </v-icon>
+                        </template>
+                        <span>Increment Item</span>
+                    </v-tooltip>
                 </template>
             </v-text-field>
         </v-col>

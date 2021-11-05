@@ -5,25 +5,39 @@
                 <v-card-title>
                     Inventory
                     <v-spacer />
-                    <v-btn
-                        class="mx-2"
-                        fab
-                        small
-                        color="primary"
-                        @click="showList = !showList"
-                    >
-                        <v-icon>
-                            {{ showList ? $icons.mdiArrowCollapseUp : $icons.mdiArrowExpandDown }}
-                        </v-icon>
-                    </v-btn>
+                    <v-tooltip bottom>
+                        <template #activator="{ on, attrs }">
+                            <v-btn
+                                class="mx-2"
+                                fab
+                                small
+                                color="primary"
+                                v-bind="attrs"
+                                v-on="on"
+                                @click="showList = !showList"
+                            >
+                                <v-icon>
+                                    {{ showList ? $icons.mdiArrowCollapseUp : $icons.mdiArrowExpandDown }}
+                                </v-icon>
+                            </v-btn>
+                        </template>
+                        <span>{{ showList ? 'Hide inventory' : 'Show inventory' }}</span>
+                    </v-tooltip>
                 </v-card-title>
                 <v-card-actions>
-                    <v-btn
-                        block
-                        @click="deleteAll"
-                    >
-                        Delete All
-                    </v-btn>
+                    <v-tooltip bottom>
+                        <template #activator="{ on, attrs }">
+                            <v-btn
+                                block
+                                v-bind="attrs"
+                                v-on="on"
+                                @click="deleteAll"
+                            >
+                                Delete All
+                            </v-btn>
+                        </template>
+                        <span>Delete all items</span>
+                    </v-tooltip>
                 </v-card-actions>
                 <v-card-text :class="showList ? '' : 'hide'">
                     <v-row>
