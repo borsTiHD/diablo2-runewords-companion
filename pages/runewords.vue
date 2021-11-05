@@ -1,7 +1,22 @@
 <template>
     <v-row>
-        <v-col cols="2" sm="12" md="3" lg="2">
+        <v-col cols="12" sm="12" md="3" lg="2">
             <v-card :elevation="getElevation" :outlined="getOutlined">
+                <v-card-title>
+                    Inventory
+                    <v-spacer />
+                    <v-btn
+                        class="mx-2"
+                        fab
+                        small
+                        color="primary"
+                        @click="showList = !showList"
+                    >
+                        <v-icon>
+                            {{ showList ? $icons.mdiArrowCollapseUp : $icons.mdiArrowExpandDown }}
+                        </v-icon>
+                    </v-btn>
+                </v-card-title>
                 <v-card-actions>
                     <v-btn
                         block
@@ -10,8 +25,12 @@
                         Delete All
                     </v-btn>
                 </v-card-actions>
-                <v-card-text>
-                    <rune-inventory v-for="(rune, index) in getRuneList" :key="index" :rune="rune.name" />
+                <v-card-text :class="showList ? '' : 'hide'">
+                    <v-row>
+                        <v-col v-for="(rune, index) in getRuneList" :key="index" cols="12" sm="4" md="12">
+                            <rune-inventory :rune="rune.name" />
+                        </v-col>
+                    </v-row>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -35,6 +54,11 @@ export default {
     components: {
         RuneInventory,
         RunewordDisplay
+    },
+    data() {
+        return {
+            showList: true
+        }
     },
     head() {
         return {

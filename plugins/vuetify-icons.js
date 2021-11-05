@@ -12,7 +12,9 @@ import {
     mdiMagnify,
     mdiFormatFont,
     mdiPlus,
-    mdiMinus
+    mdiMinus,
+    mdiArrowCollapseUp,
+    mdiArrowExpandDown
 } from '@mdi/js'
 
 const MY_ICONS = {
@@ -29,7 +31,9 @@ const MY_ICONS = {
     mdiMagnify,
     mdiFormatFont,
     mdiPlus,
-    mdiMinus
+    mdiMinus,
+    mdiArrowCollapseUp,
+    mdiArrowExpandDown
 }
 
 export default ({ app }, inject) => {
