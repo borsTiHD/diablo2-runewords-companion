@@ -24,7 +24,32 @@
                         <span>{{ showList ? 'Hide inventory' : 'Show inventory' }}</span>
                     </v-tooltip>
                 </v-card-title>
-                <v-card-actions :class="showList ? '' : 'hide'" class="d-flex">
+                <v-card-actions :class="showList ? '' : 'hide'">
+                    <v-autocomplete
+                        v-model="searchedRunes"
+                        :search-input.sync="searchRuneInput"
+                        :items="getRuneList"
+                        label="filter runes..."
+                        item-text="name"
+                        deletable-chips
+                        return-object
+                        hide-details
+                        small-chips
+                        clearable
+                        multiple
+                        chips
+                        solo
+                        @input="searchChanged"
+                    />
+                </v-card-actions>
+                <v-card-text :class="showList ? '' : 'hide'">
+                    <v-row>
+                        <v-col v-for="(rune, index) in searchedRunes.length > 0 ? searchedRunes : getRuneList" :key="index" cols="12" sm="4" md="12">
+                            <rune-inventory :rune="rune.name" />
+                        </v-col>
+                    </v-row>
+                </v-card-text>
+                <v-card-actions>
                     <v-tooltip bottom>
                         <template #activator="{ on, attrs }">
                             <v-btn
@@ -39,13 +64,6 @@
                         <span>Delete all items</span>
                     </v-tooltip>
                 </v-card-actions>
-                <v-card-text :class="showList ? '' : 'hide'">
-                    <v-row>
-                        <v-col v-for="(rune, index) in getRuneList" :key="index" cols="12" sm="4" md="12">
-                            <rune-inventory :rune="rune.name" />
-                        </v-col>
-                    </v-row>
-                </v-card-text>
             </v-card>
         </v-col>
         <v-col cols="10" sm="12" md="9" lg="10">
@@ -71,7 +89,9 @@ export default {
     },
     data() {
         return {
-            showList: true
+            showList: true,
+            searchRuneInput: '',
+            searchedRunes: []
         }
     },
     head() {
@@ -133,6 +153,11 @@ export default {
         },
         showRuneword(name) {
             return this.calculatedRunewordList.includes(name)
+        },
+        searchChanged(val) {
+            // Event is triggered when a rune is added to the search...
+            // We use this event to clear the user input for a new search
+            this.searchRuneInput = ''
         }
     }
 }
