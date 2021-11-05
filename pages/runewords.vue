@@ -24,7 +24,7 @@
                         <span>{{ showList ? 'Hide inventory' : 'Show inventory' }}</span>
                     </v-tooltip>
                 </v-card-title>
-                <v-card-actions>
+                <v-card-actions :class="showList ? '' : 'hide'" class="d-flex">
                     <v-tooltip bottom>
                         <template #activator="{ on, attrs }">
                             <v-btn
