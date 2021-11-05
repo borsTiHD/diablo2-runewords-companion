@@ -16,7 +16,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-    name: 'IndexSearch',
+    name: 'AppSearch',
     props: {
         rune: {
             type: Object,
@@ -36,7 +36,7 @@ export default {
     },
     computed: {
         ...mapGetters({
-            getSearch: 'indexSearch/getSearch',
+            getSearch: 'appSearch/getSearch',
             getRunewordList: 'runewords/getRunewordList',
             getRuneList: 'runes/getRuneList',
             getGemList: 'gems/getGemList'
@@ -82,7 +82,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            setSearch: 'indexSearch/setSearch'
+            setSearch: 'appSearch/setSearch'
         }),
         selectedSearch(item) {
             // If an item was selected in the search bar, we check what type of item was selected and do different things with it :)

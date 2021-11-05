@@ -9,7 +9,7 @@
         <v-toolbar-title style="cursor: pointer" @click="$router.push('/')" v-text="title" />
 
         <v-spacer />
-        <index-search v-if="!$vuetify.breakpoint.mobile" />
+        <app-search v-if="!$vuetify.breakpoint.mobile" />
 
         <v-menu
             v-else
@@ -30,7 +30,7 @@
                     </v-icon>
                 </v-btn>
             </template>
-            <index-search />
+            <app-search />
         </v-menu>
         <v-spacer />
 
@@ -43,14 +43,14 @@
 import { mapGetters, mapActions } from 'vuex'
 import pkg from 'projRoot/package.json'
 
-import IndexSearch from '~/components/display/IndexSearch.vue'
+import AppSearch from '~/components/display/AppSearch.vue'
 import AppPwaChip from '~/components/display/AppPwaChip.vue'
 import DonateChip from '~/components/display/DonateChip.vue'
 
 export default {
     name: 'Header',
     components: {
-        IndexSearch,
+        AppSearch,
         AppPwaChip,
         DonateChip
     },
