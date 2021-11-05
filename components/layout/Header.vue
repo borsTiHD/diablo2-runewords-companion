@@ -9,18 +9,7 @@
         <v-toolbar-title style="cursor: pointer" @click="$router.push('/')" v-text="title" />
 
         <v-spacer />
-        <v-autocomplete
-            v-if="!$vuetify.breakpoint.mobile"
-            v-model="searchItem"
-            :items="itemList"
-            label="Search for a rune, or runeword..."
-            clearable
-            hide-details
-            return-object
-            chips
-            solo
-            @input="selectedSearch"
-        />
+        <index-search v-if="!$vuetify.breakpoint.mobile" />
 
         <v-menu
             v-else
@@ -41,17 +30,7 @@
                     </v-icon>
                 </v-btn>
             </template>
-            <v-autocomplete
-                v-model="searchItem"
-                :items="itemList"
-                label="Search for a rune, or runeword..."
-                clearable
-                hide-details
-                return-object
-                chips
-                solo
-                @input="selectedSearch"
-            />
+            <index-search />
         </v-menu>
         <v-spacer />
 
@@ -63,12 +42,15 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import pkg from 'projRoot/package.json'
+
+import IndexSearch from '~/components/display/IndexSearch.vue'
 import AppPwaChip from '~/components/display/AppPwaChip.vue'
 import DonateChip from '~/components/display/DonateChip.vue'
 
 export default {
     name: 'Header',
     components: {
+        IndexSearch,
         AppPwaChip,
         DonateChip
     },
@@ -80,10 +62,7 @@ export default {
     },
     computed: {
         ...mapGetters({
-            getDrawer: 'settings/getDrawer',
-            getRunewordList: 'runewords/getRunewordList',
-            getRuneList: 'runes/getRuneList',
-            getGemList: 'gems/getGemList'
+            getDrawer: 'settings/getDrawer'
         }),
         drawer: {
             get() {
@@ -92,64 +71,12 @@ export default {
             set(value) {
                 this.setDrawer(value)
             }
-        },
-        itemList() {
-            // Making a custom list of items
-            let list = []
-
-            // Adding runewords as { name: 'Insight', type: 'runeword' }
-            list = list.concat(this.getRunewordList.map((item) => {
-                return {
-                    text: item.name,
-                    type: 'runeword'
-                }
-            }))
-
-            // Adding runes as { name: 'El', type: 'rune' }
-            list = list.concat(this.getRuneList.map((item) => {
-                return {
-                    text: item.name,
-                    type: 'rune'
-                }
-            }))
-
-            // Adding gems as { name: 'Topaz', type: 'gem' }
-            list = list.concat(this.getGemList.map((item) => {
-                return {
-                    text: item.name,
-                    type: 'gem'
-                }
-            }))
-
-            return list
         }
     },
     methods: {
         ...mapActions({
             setDrawer: 'settings/setDrawer'
-        }),
-        selectedSearch(item) {
-            // If an item was selected in the search bar, we check what type of item was selected and do different things with it :)
-            // For example push to another route to display a rune, or gem...
-            if (item) {
-                switch (item.type) {
-                    case 'rune':
-                        this.$router.push(`/rune/${item.text}`)
-                        break
-
-                    case 'runeword':
-                        this.$router.push(`/runeword/${item.text}`)
-                        break
-
-                    case 'gem':
-                        this.$router.push(`/gem/${item.text}`)
-                        break
-
-                    default:
-                        break
-                }
-            }
-        }
+        })
     }
 }
 </script>
