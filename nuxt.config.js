@@ -28,13 +28,18 @@ export default {
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
     ssr: false,
 
+    // Target: https://go.nuxtjs.dev/config-target
+    target: 'static',
+
     // Serving on network
     server: {
         host: '0.0.0.0' // default: localhost
     },
 
-    // Target: https://go.nuxtjs.dev/config-target
-    target: 'static',
+    // GitHub Pages base
+    router: {
+        base: `/${pkg.name}/` // '/<repository-name>/'
+    },
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
