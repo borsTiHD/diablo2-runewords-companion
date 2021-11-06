@@ -38,7 +38,8 @@ export default {
 
     // GitHub Pages base
     router: {
-        base: `/${pkg.name}/` // '/<repository-name>/'
+        // base: `/${pkg.name}/` // '/<repository-name>/' // WHY NOT WORKING DYNAMICALLY??? HU?
+        base: '/diablo2-runewords-companion/'
     },
 
     // Global page headers: https://go.nuxtjs.dev/config-head
